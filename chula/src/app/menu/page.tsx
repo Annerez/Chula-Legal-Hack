@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from 'react';
-import { Navbar } from '../../../components/Navbar';
+import Navbar from '@/components/ui/Navbar';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import { Info, Shield, Lock } from 'lucide-react';
@@ -11,7 +11,7 @@ const MenuPage = () => {
   const [isHoveredDeny, setIsHoveredDeny] = useState(false);
 
   const handleAllow = () => {
-    router.push('/login');
+    router.push('/auth/login');
   };
 
   const handleDeny = () => {

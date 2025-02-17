@@ -5,8 +5,8 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { Eye, EyeOff, Mail, Lock } from 'lucide-react';
-import { Navbar } from '../../../components/Navbar';
-import { InputField } from '../../../components/InputField';
+import Navbar from '@/components/ui/Navbar';
+import { InputField } from '@/components/ui/InputField';
 
 const LoginPage = () => {
   const router = useRouter();
@@ -43,7 +43,7 @@ const LoginPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800">
+    <div className="min-h-screen">
       <Navbar />
       <main className="container mx-auto px-4 pt-8">
         <motion.div 
@@ -55,13 +55,13 @@ const LoginPage = () => {
           {/* Auth Toggle */}
           <div className="flex rounded-2xl bg-gray-700 bg-opacity-30 mb-8 p-1">
             <Link 
-              href="/signup" 
+              href="/auth/signup" 
               className="w-1/2 py-3 text-center rounded-xl text-gray-400 transition-all duration-300"
             >
               SIGN UP
             </Link>
             <Link 
-              href="/login" 
+              href="/auth/login" 
               className="w-1/2 py-3 text-center rounded-xl bg-white text-gray-900 shadow-lg transition-all duration-300"
             >
               LOGIN

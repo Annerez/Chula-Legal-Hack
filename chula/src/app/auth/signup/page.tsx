@@ -4,8 +4,8 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { Mail, Lock, User, MapPin, Earth, Building2 } from 'lucide-react';
-import { Navbar } from '../../../components/Navbar';
-import { InputField } from '../../../components/InputField';
+import Navbar from '@/components/ui/Navbar';
+import { InputField } from '@/components/ui/InputField';
 
 const SignUpPage = () => {
   const router = useRouter();
@@ -128,12 +128,12 @@ const SignUpPage = () => {
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
-      router.push('/login');
+      router.push('/auth/confirm');
     }, 1500);
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800">
+    <div className="min-h-screen">
       <Navbar />
       <main className="container mx-auto px-4 pt-8 pb-16">
         <motion.div 
@@ -145,13 +145,13 @@ const SignUpPage = () => {
           {/* Auth Toggle */}
           <div className="flex rounded-2xl bg-gray-700 bg-opacity-30 mb-8 p-1">
             <Link 
-              href="/signup" 
+              href="/auth/signup" 
               className="w-1/2 py-3 text-center rounded-xl bg-white text-gray-900 shadow-lg transition-all duration-300"
             >
               SIGN UP
             </Link>
             <Link 
-              href="/login" 
+              href="/auth/login" 
               className="w-1/2 py-3 text-center rounded-xl text-gray-400 transition-all duration-300"
             >
               LOGIN
@@ -168,7 +168,7 @@ const SignUpPage = () => {
           >
             <div className="relative">
               <InputField
-                label="EMAIL ADDRESS"
+                label="อีเมล"
                 type="email"
                 name="email"
                 placeholder="Enter your email"
@@ -182,7 +182,7 @@ const SignUpPage = () => {
             
             <div className="relative">
               <InputField
-                label="PASSWORD"
+                label="รหัสผ่าน"
                 type="password"
                 name="password"
                 placeholder="Create password"
@@ -196,7 +196,7 @@ const SignUpPage = () => {
 
             <div className="relative">
               <InputField
-                label="CONFIRM PASSWORD"
+                label="ยืนยันรหัสผ่าน"
                 type="password"
                 name="confirmPassword"
                 placeholder="Confirm password"
@@ -210,7 +210,7 @@ const SignUpPage = () => {
 
             <div className="flex gap-4">
               <InputField
-                label="FIRST NAME"
+                label="ชื่อจริง"
                 type="text"
                 name="firstName"
                 placeholder="First name"
@@ -222,7 +222,7 @@ const SignUpPage = () => {
               />
               
               <InputField
-                label="LAST NAME"
+                label="นามสกุล"
                 type="text"
                 name="lastName"
                 placeholder="Last name"
@@ -233,26 +233,12 @@ const SignUpPage = () => {
               />
             </div>
 
-            <div className="relative">
+            <div className="flex items-end gap-4">
               <InputField
-                label="ADDRESS"
-                type="text"
-                name="address"
-                placeholder="Enter your address"
-                required
-                value={formData.address}
-                onChange={handleInputChange}
-                error={errors.address}
-                icon={<MapPin className="w-5 h-5" />}
-              />
-            </div>
-
-            <div className="flex gap-4">
-              <InputField
-                  label="ADDRESS"
+                  label="ที่อยู่"
                   type="text"
                   name="address"
-                  placeholder="Enter your address"
+                  placeholder="Street address"
                   required
                   value={formData.address}
                   onChange={handleInputChange}
@@ -261,40 +247,40 @@ const SignUpPage = () => {
                 />
               
               <InputField
-                label="CITY"
+                label=""
                 type="text"
                 name="city"
                 placeholder="City"
                 required
-                value={formData.lastName}
+                value={formData.city}
                 onChange={handleInputChange}
-                error={errors.lastName}
+                error={errors.city}
                 icon={<Building2 className="w-5 h-5" />}
               />
             </div>
 
             <div className="flex gap-4">
               <InputField
-                  label="POSTAL"
+                  label=""
                   type="text"
                   name="postal"
                   placeholder="Postal"
                   required
-                  value={formData.address}
+                  value={formData.postal}
                   onChange={handleInputChange}
-                  error={errors.address}
+                  error={errors.postal}
                   icon={<Mail className="w-5 h-5" />}
                 />
               
               <InputField
-                label="COUNTRY"
+                label=""
                 type="text"
                 name="country"
                 placeholder="Country"
                 required
-                value={formData.lastName}
+                value={formData.country}
                 onChange={handleInputChange}
-                error={errors.lastName}
+                error={errors.country}
                 icon={<Earth className="w-5 h-5" />}
               />
             </div>
@@ -317,14 +303,14 @@ const SignUpPage = () => {
                   CREATING ACCOUNT...
                 </span>
               ) : (
-                'CREATE ACCOUNT'
+                'SIGN UP'
               )}
             </motion.button>
 
             <p className="text-center text-gray-400 text-sm mt-4">
               Already have an account?{' '}
-              <Link href="/login" className="text-yellow-400 hover:text-yellow-300 transition-colors">
-                Login here
+              <Link href="/auth/login" className="text-yellow-400 hover:text-yellow-300 transition-colors">
+                Log in
               </Link>
             </p>
           </motion.form>

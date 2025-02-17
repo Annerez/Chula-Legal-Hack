@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState } from 'react';
-import { InputFieldProps } from '../components/type';
+import { InputFieldProps } from './type';
 
 export const InputField: React.FC<InputFieldProps> = ({
   label,

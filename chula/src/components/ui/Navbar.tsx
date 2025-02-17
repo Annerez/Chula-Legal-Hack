@@ -8,10 +8,11 @@ export const Navbar: React.FC<NavbarProps> = ({ className = '' }) => {
     <nav className={`w-full bg-white p-4 flex justify-between items-center ${className}`}>
       <Link href="/">
         <div className="cursor-pointer">
-          <Image src="/logo.png" alt="FactoLaw Logo" width={40} height={40} className="w-10 h-10" />
+          <Image src="/logo.png" alt="FactoLaw Logo" width={50} height={50} className="" />
         </div>
       </Link>
-      <div className="flex items-center gap-6">
+      <div className="flex items-center gap-4">
+      <Link href="/partner" className="text-blue-600">PARTNER</Link>
         <Link href="/about" className="text-blue-600">ABOUT US</Link>
         <Link href="/contact" className="text-blue-600">CONTACT</Link>
         <button className="text-blue-600">
@@ -25,4 +26,4 @@ export const Navbar: React.FC<NavbarProps> = ({ className = '' }) => {
   );
 };
 
-export default Navbar;
+export default Navbar
