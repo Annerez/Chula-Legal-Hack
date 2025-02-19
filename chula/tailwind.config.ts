@@ -10,6 +10,10 @@ export default {
   ],
   theme: {
   	extend: {
+		fontFamily: {
+			sans: ["Geist", "LINE Seed Sans TH", "sans-serif"],
+			thai: ["LINE Seed Sans TH", "sans-serif"],
+		  },
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',

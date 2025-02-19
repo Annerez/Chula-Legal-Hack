@@ -1,6 +1,10 @@
 export interface NavbarProps {
     className?: string;
 }
+
+export interface BottomProps {
+    className?: string;
+}
  
 export interface InputFieldProps {
     label: string;

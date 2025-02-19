@@ -12,12 +12,12 @@ export const Navbar: React.FC<NavbarProps> = ({ className = '' }) => {
         </div>
       </Link>
       <div className="flex items-center gap-4">
-      <Link href="/partner" className="text-blue-600">PARTNER</Link>
-        <Link href="/about" className="text-blue-600">ABOUT US</Link>
-        <Link href="/contact" className="text-blue-600">CONTACT</Link>
-        <button className="text-blue-600">
+      <Link href="/nav/partner" className="text-blue-600">PARTNER</Link>
+        <Link href="/nav/about" className="text-blue-600">ABOUT US</Link>
+        <Link href="/nav/contact" className="text-blue-600">CONTACT</Link>
+        <Link href="/nav/noti" className="text-blue-600">
           <Image src="/bell-icon.svg" alt="Notifications" width={24} height={24} />
-        </button>
+        </Link>
         <button className="text-blue-600">
           <Image src="/globe-icon.svg" alt="Language" width={24} height={24} />
         </button>

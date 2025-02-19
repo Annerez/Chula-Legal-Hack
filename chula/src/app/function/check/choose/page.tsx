@@ -5,7 +5,7 @@ import Navbar from '@/components/ui/Navbar';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
-const FactoryCheckPage = () => {
+const CheckChoose = () => {
   const router = useRouter();
   
   return (
@@ -18,7 +18,7 @@ const FactoryCheckPage = () => {
         <div className="flex flex-col items-center text-center pt-8 pb-12">
           <div className="flex items-end justify-center space-x-2">
             <h2 className="text-white text-xl">ข้อกำหนดการจัดตั้งโรงงาน</h2>
-            <span className="text-yellow-400 text-5xl font-bold">ประเภทที่ 1</span>
+            <span className="text-yellow-400 text-5xl font-bold">ประเภทที่ 2</span>
           </div>
           <div className="w-1/2 h-0.5 bg-white mt-2 my-4"></div>
           <p className="text-white">ตรวจสอบว่าโรงงานของคุณเข้าหลักเกณฑ์หรือไม่</p>
@@ -31,7 +31,7 @@ const FactoryCheckPage = () => {
             <div className="flex items-center justify-center border-r border-white">
               <div className="flex flex-col items-center text-white pb-24">
                 <span className="text-xl font-bold text-center">ตำแหน่งโรงงาน</span>
-                <button onClick={() => {router.push('/function/classify/question')}} className="w-32 h-32 relative mt-4">
+                <button onClick={() => {router.push('/function/check/question')}} className="w-32 h-32 relative mt-4">
                   <Image 
                     src="/category/one.svg" 
                     alt="ตำแหน่ง" 
@@ -46,7 +46,7 @@ const FactoryCheckPage = () => {
             {/* Building characteristics */}
             <div className="flex items-center justify-center border-r border-white">
               <div className="flex flex-col items-center text-white">
-                <div className="w-32 h-32 relative mb-4">
+                <button onClick={() => {router.push('/function/check/questionTwo')}} className="w-32 h-32 relative mb-4">
                   <Image 
                     src="/category/two.svg" 
                     alt="ลักษณะอาคาร" 
@@ -54,7 +54,7 @@ const FactoryCheckPage = () => {
                     objectFit="contain"
                     className="transform hover:scale-110 transition-transform duration-200"
                   />
-                </div>
+                </button>
                 <span className="text-xl font-bold text-center">ลักษณะอาคาร</span>
               </div>
             </div>
@@ -63,7 +63,7 @@ const FactoryCheckPage = () => {
             <div className="flex items-center justify-center border-r border-white">
               <div className="flex flex-col items-center text-white pb-24">
                 <span className="text-xl font-bold text-center">เครื่องจักร</span>
-                <div className="w-32 h-32 relative mt-4">
+                <button onClick={() => {router.push('/function/check/questionThree')}} className="w-32 h-32 relative mt-4">
                   <Image 
                     src="/category/three.svg" 
                     alt="เครื่องจักร" 
@@ -71,14 +71,14 @@ const FactoryCheckPage = () => {
                     objectFit="contain"
                     className="transform hover:scale-110 transition-transform duration-200"
                   />
-                </div>
+                </button>
               </div>
             </div>
 
             {/* Workers */}
             <div className="flex items-center justify-center border-r border-white">
               <div className="flex flex-col items-center text-white">
-                <div className="w-32 h-32 relative mb-4">
+                <button onClick={() => {router.push('/function/check/questionFour')}} className="w-32 h-32 relative mb-4">
                   <Image 
                     src="/category/four.svg" 
                     alt="คนงาน" 
@@ -86,7 +86,7 @@ const FactoryCheckPage = () => {
                     objectFit="contain"
                     className="transform hover:scale-110 transition-transform duration-200"
                   />
-                </div>
+                </button>
                 <span className="text-xl font-bold text-center">คนงาน</span>
               </div>
             </div>
@@ -95,7 +95,7 @@ const FactoryCheckPage = () => {
             <div className="flex items-center justify-center">
               <div className="flex flex-col items-center text-white pb-24">
                 <span className="text-xl font-bold text-center">การควบคุมการปล่อย<br/>ของเสียและมลพิษ</span>
-                <div className="w-32 h-32 relative mt-4">
+                <button onClick={() => {router.push('/function/check/questionFive')}} className="w-32 h-32 relative mt-4">
                   <Image 
                     src="/category/five.svg" 
                     alt="การควบคุมการปล่อยของเสียและมลพิษ" 
@@ -103,7 +103,7 @@ const FactoryCheckPage = () => {
                     objectFit="contain"
                     className="transform hover:scale-110 transition-transform duration-200"
                   />
-                </div>
+                </button>
               </div>
             </div>
           </div>
@@ -126,4 +126,4 @@ const FactoryCheckPage = () => {
   );
 };
 
-export default FactoryCheckPage;
+export default CheckChoose;

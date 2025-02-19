@@ -37,9 +37,9 @@ const LoginPage = () => {
   };
 
   const socialProviders = [
-    { icon: '/google-icon.png', name: 'Google', bgColor: 'bg-white' },
-    { icon: '/facebook-icon.png', name: 'Facebook', bgColor: 'bg-blue-600 text-white' },
-    { icon: '/apple-icon.png', name: 'Apple', bgColor: 'bg-black text-white' }
+    { icon: '/google.svg', name: 'Google', bgColor: 'bg-white' },
+    { icon: '/facebook.svg', name: 'Facebook', bgColor: 'bg-blue-600 text-white' },
+    { icon: '/apple.svg', name: 'Apple', bgColor: 'bg-white' }
   ];
 
   return (

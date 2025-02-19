@@ -50,8 +50,8 @@ const slides: Slide[] = [
 
 const menuItems: MenuItem[] = [
   { name: 'จำแนก', image: 'dashboard/two.svg', description: 'ประเภทโรงงาน', source: 'function/classify/select' },
-  { name: 'ตรวจสอบ', image: 'dashboard/three.svg', description: 'หลักเกณฑ์', source: 'function/classify/select'},
-  { name: 'เอกสาร', image: 'dashboard/four.svg', description: 'สำหรับการจดและแจ้ง', source: 'function/classify/select' }
+  { name: 'ตรวจสอบ', image: 'dashboard/three.svg', description: 'หลักเกณฑ์', source: 'function/check/type'},
+  { name: 'เอกสาร', image: 'dashboard/four.svg', description: 'สำหรับการจดและแจ้ง', source: 'function/document/status' }
 ];
 
 const HomePage: React.FC = () => {
@@ -195,10 +195,10 @@ const HomePage: React.FC = () => {
 
           <div className="mx-8 w-px bg-gray-600 self-stretch" />
 
-          {/* Menu Cards */}
-          {menuItems.map((item, index) => (
-            <MenuCard key={index} item={item} />
-          ))}
+            {/* Menu Cards */}
+            {menuItems.map((item, index) => (
+              <MenuCard key={index} item={item} />
+            ))}
         </div>
       </section>
     </div>

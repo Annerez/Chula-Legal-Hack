@@ -10,6 +10,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { useRouter } from 'next/navigation';
 import Navbar from '@/components/ui/Navbar';
+import { Bottom } from '@/components/ui/Bottom';
 
 const FactoryClassification = () => {
     const router = useRouter();
@@ -90,14 +91,7 @@ const FactoryClassification = () => {
       </div>
 
       {/* Footer Navigation */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white py-4 px-6 flex justify-between items-center shadow-lg">
-        <button className="text-blue-600 font-medium hover:underline" type="submit">
-          BACK
-        </button>
-        <span className="text-blue-600 font-medium text-center">
-          จำแนกประเภทโรงงาน
-        </span>
-      </div>
+      <Bottom />
     </div>
   );
 };
